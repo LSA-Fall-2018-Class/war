@@ -2,7 +2,12 @@
 var yourDeck = []
 var hisDeck = []
 
-var yourCard
+// Each data field within a player - Only used to pre-build games
+const INDEX_CARD_VALUE = 0;
+const INDEX_CARD_IMAGE = 1;
+
+
+var yourCard // zzz
 var hisCard
 
 var yourCardValue
@@ -18,6 +23,13 @@ shuffleAndDeal()
 function shuffleAndDeal(){
 
   //shuffle
+
+  var cards = new Array;
+
+  // spade, heart, club, diamond
+  cards.push(13,"acespade.png");
+
+
 
 
   deck.push("<img src= '2club.png'>")
@@ -87,103 +99,191 @@ function shuffleAndDeal(){
 
 
 function attack(){
-  if (document.getElementById("yourCard").innerHTML == ""){
+
+  // if (document.getElementById("yourCard").innerHTML == ""){
+
   yourCardNumber = Math.floor(Math.random() * yourDeck.length);
   hisCardNumber = Math.floor(Math.random() * hisDeck.length);
 
-  yourCard = yourDeck[yourCardNumber]
-  hisCard = hisDeck[hisCardNumber]
+  yourCard = yourDeck[yourCardNumber];
+  hisCard = hisDeck[hisCardNumber];
 
-  document.getElementById("yourCard").innerHTML = yourCard
-  document.getElementById("hisCard").innerHTML = hisCard
+  // alert ("Your card on way in is " + yourCard);
+  // alert ("His card on way in is " + hisCard);
+
+  document.getElementById("yourCard").innerHTML = yourCard;
+  document.getElementById("hisCard").innerHTML = hisCard;
+
 
   switch (yourCard) {
-    case "<img src= 'aceclub.png'>"||"<img src= 'acediamond.png'>"||"<img src= 'aceheart.png'>"||"<img src= 'acespade.png'>":
-      yourCardValue = 13
+    case "<img src= 'aceclub.png'>":
+    case "<img src= 'acediamond.png'>":
+    case "<img src= 'aceheart.png'>":
+    case "<img src= 'acespade.png'>":
+      yourCardValue = 13;
       break;
-    case "<img src= 'kingclub.png'>"||"<img src= 'kingdiamond.jpeg'>"||"<img src= 'kingheart.png'>"||"<img src= 'kingspade.jpeg'>":
+    case "<img src= 'kingclub.png'>":
+    case "<img src= 'kingdiamond.jpeg'>":
+    case "<img src= 'kingheart.png'>":
+    case "<img src= 'kingspade.jpeg'>":
       yourCardValue = 12
       break;
-    case "<img src= 'queenclub.png'>"||"<img src= 'queendiamond.png'>"||"<img src= 'queenheart.png'>"||"<img src= 'queenspade.png'>":
+    case "<img src= 'queenclub.png'>":
+    case "<img src= 'queendiamond.png'>":
+    case "<img src= 'queenheart.png'>":
+    case "<img src= 'queenspade.png'>":
       yourCardValue = 11
       break;
-    case "<img src= 'jackclub.png'>"||"<img src= 'jackdiamond.png'>"||"<img src= 'jackheart.png'>"||"<img src= 'jackspade.png'>":
+    case "<img src= 'jackclub.png'>":
+    case "<img src= 'jackdiamond.png'>":
+    case "<img src= 'jackheart.png'>":
+    case "<img src= 'jackspade.png'>":
       yourCardValue = 10
       break;
-    case "<img src= '10club.png'>"||"<img src= '10diamond.png'>"||"<img src= '10heart.png'>"||"<img src= '10spade.png'>":
+    case "<img src= '10club.png'>":
+    case "<img src= '10diamond.png'>":
+    case "<img src= '10heart.png'>":
+    case "<img src= '10spade.png'>":
       yourCardValue = 9
       break;
-    case "<img src= '9club.png'>"||"<img src= '9diamond.png'>"||"<img src= '9heart.png'>"||"<img src= '9spade.png'>":
+    case "<img src= '9club.png'>":
+    case "<img src= '9diamond.png'>":
+    case "<img src= '9heart.png'>":
+    case "<img src= '9spade.png'>":
       yourCardValue = 8
       break;
-    case "<img src= '8club.png'>"||"<img src= '8diamond.png'>"||"<img src= '8heart.png'>"||"<img src= '8spade.png'>":
+    case "<img src= '8club.png'>":
+    case "<img src= '8diamond.png'>":
+    case "<img src= '8heart.png'>":
+    case "<img src= '8spade.png'>":
       yourCardValue = 7
       break;
-    case "<img src= '7club.png'>"||"<img src= '7diamond.png'>"||"<img src= '7heart.png'>"||"<img src= '7spade.png'>":
+    case "<img src= '7club.png'>":
+    case "<img src= '7diamond.png'>":
+    case "<img src= '7heart.png'>":
+    case "<img src= '7spade.png'>":
       yourCardValue = 6
       break;
-    case "<img src= '6club.png'>"||"<img src= '6diamond.png'>"||"<img src= '6heart.png'>"||"<img src= '6spade.png'>":
+    case "<img src= '6club.png'>":
+    case "<img src= '6diamond.png'>":
+    case "<img src= '6heart.png'>":
+    case "<img src= '6spade.png'>":
       yourCardValue = 5
       break;
-    case "<img src= '5club.png'>"||"<img src= '5diamond.png'>"||"<img src= '5heart.png'>"||"<img src= '5spade.png'>":
+    case "<img src= '5club.png'>":
+    case "<img src= '5diamond.png'>":
+    case "<img src= '5heart.png'>":
+    case "<img src= '5spade.png'>":
       yourCardValue = 4
       break;
-    case "<img src= '4club.png'>"||"<img src= '4diamond.png'>"||"<img src= '4heart.png'>"||"<img src= '4spade.png'>":
+    case "<img src= '4club.png'>":
+    case "<img src= '4diamond.png'>":
+    case "<img src= '4heart.png'>":
+    case "<img src= '4spade.png'>":
       yourCardValue = 3
       break;
-    case "<img src= '3club.png'>"||"<img src= '3diamond.png'>"||"<img src= '3heart.png'>"||"<img src= '3spade.png'>":
+    case "<img src= '3club.png'>":
+    case "<img src= '3diamond.png'>":
+    case "<img src= '3heart.png'>":
+    case "<img src= '3spade.png'>":
       yourCardValue = 2
       break;
-    case "<img src= '2club.png'>"||"<img src= '2diamond.png'>"||"<img src= '2heart.png'>"||"<img src= '2spade.png'>":
+    case "<img src= '2club.png'>":
+    case "<img src= '2diamond.png'>":
+    case "<img src= '2heart.png'>":
+    case "<img src= '2spade.png'>":
       yourCardValue = 1
       break;
     default:
 
   }
-  switch (hisCard) {
-    case "<img src= 'aceclub.png'>"||"<img src= 'acediamond.png'>"||"<img src= 'aceheart.png'>"||"<img src= 'acespade.png'>":
-      hisCardValue = 13
-      break;
-    case "<img src= 'kingclub.png'>"||"<img src= 'kingdiamond.jpeg'>"||"<img src= 'kingheart.png'>"||"<img src= 'kingspade.jpeg'>":
-      hisCardValue = 12
-      break;
-    case "<img src= 'queenclub.png'>"||"<img src= 'queendiamond.png'>"||"<img src= 'queenheart.png'>"||"<img src= 'queenspade.png'>":
-      hisCardValue = 11
-      break;
-    case "<img src= 'jackclub.png'>"||"<img src= 'jackdiamond.png'>"||"<img src= 'jackheart.png'>"||"<img src= 'jackspade.png'>":
-      hisCardValue = 10
-      break;
-    case "<img src= '10club.png'>"||"<img src= '10diamond.png'>"||"<img src= '10heart.png'>"||"<img src= '10spade.png'>":
-      hisCardValue = 9
-      break;
-    case "<img src= '9club.png'>"||"<img src= '9diamond.png'>"||"<img src= '9heart.png'>"||"<img src= '9spade.png'>":
-      hisCardValue = 8
-      break;
-    case "<img src= '8club.png'>"||"<img src= '8diamond.png'>"||"<img src= '8heart.png'>"||"<img src= '8spade.png'>":
-      hisCardValue = 7
-      break;
-    case "<img src= '7club.png'>"||"<img src= '7diamond.png'>"||"<img src= '7heart.png'>"||"<img src= '7spade.png'>":
-      hisCardValue = 6
-      break;
-    case "<img src= '6club.png'>"||"<img src= '6diamond.png'>"||"<img src= '6heart.png'>"||"<img src= '6spade.png'>":
-      hisCardValue = 5
-      break;
-    case "<img src= '5club.png'>"||"<img src= '5diamond.png'>"||"<img src= '5heart.png'>"||"<img src= '5spade.png'>":
-      hisCardValue = 4
-      break;
-    case "<img src= '4club.png'>"||"<img src= '4diamond.png'>"||"<img src= '4heart.png'>"||"<img src= '4spade.png'>":
-      hisCardValue = 3
-      break;
-    case "<img src= '3club.png'>"||"<img src= '3diamond.png'>"||"<img src= '3heart.png'>"||"<img src= '3spade.png'>":
-      hisCardValue = 2
-      break;
-    case "<img src= '2club.png'>"||"<img src= '2diamond.png'>"||"<img src= '2heart.png'>"||"<img src= '2spade.png'>":
-      hisCardValue = 1
-      break;
-    default:
 
-  }
 
+    switch (hisCard) {
+      case "<img src= 'aceclub.png'>":
+      case "<img src= 'acediamond.png'>":
+      case "<img src= 'aceheart.png'>":
+      case "<img src= 'acespade.png'>":
+        hisCardValue = 13;
+        break;
+      case "<img src= 'kingclub.png'>":
+      case "<img src= 'kingdiamond.jpeg'>":
+      case "<img src= 'kingheart.png'>":
+      case "<img src= 'kingspade.jpeg'>":
+        hisCardValue = 12
+        break;
+      case "<img src= 'queenclub.png'>":
+      case "<img src= 'queendiamond.png'>":
+      case "<img src= 'queenheart.png'>":
+      case "<img src= 'queenspade.png'>":
+        hisCardValue = 11
+        break;
+      case "<img src= 'jackclub.png'>":
+      case "<img src= 'jackdiamond.png'>":
+      case "<img src= 'jackheart.png'>":
+      case "<img src= 'jackspade.png'>":
+        hisCardValue = 10
+        break;
+      case "<img src= '10club.png'>":
+      case "<img src= '10diamond.png'>":
+      case "<img src= '10heart.png'>":
+      case "<img src= '10spade.png'>":
+        hisCardValue = 9
+        break;
+      case "<img src= '9club.png'>":
+      case "<img src= '9diamond.png'>":
+      case "<img src= '9heart.png'>":
+      case "<img src= '9spade.png'>":
+        hisCardValue = 8
+        break;
+      case "<img src= '8club.png'>":
+      case "<img src= '8diamond.png'>":
+      case "<img src= '8heart.png'>":
+      case "<img src= '8spade.png'>":
+        hisCardValue = 7
+        break;
+      case "<img src= '7club.png'>":
+      case "<img src= '7diamond.png'>":
+      case "<img src= '7heart.png'>":
+      case "<img src= '7spade.png'>":
+        hisCardValue = 6
+        break;
+      case "<img src= '6club.png'>":
+      case "<img src= '6diamond.png'>":
+      case "<img src= '6heart.png'>":
+      case "<img src= '6spade.png'>":
+        hisCardValue = 5
+        break;
+      case "<img src= '5club.png'>":
+      case "<img src= '5diamond.png'>":
+      case "<img src= '5heart.png'>":
+      case "<img src= '5spade.png'>":
+        hisCardValue = 4
+        break;
+      case "<img src= '4club.png'>":
+      case "<img src= '4diamond.png'>":
+      case "<img src= '4heart.png'>":
+      case "<img src= '4spade.png'>":
+        hisCardValue = 3
+        break;
+      case "<img src= '3club.png'>":
+      case "<img src= '3diamond.png'>":
+      case "<img src= '3heart.png'>":
+      case "<img src= '3spade.png'>":
+        hisCardValue = 2
+        break;
+      case "<img src= '2club.png'>":
+      case "<img src= '2diamond.png'>":
+      case "<img src= '2heart.png'>":
+      case "<img src= '2spade.png'>":
+        hisCardValue = 1
+        break;
+      default:
+
+    }
+
+
+  alert ("My card value is " + yourCardValue + "  His card value is " + hisCardValue);
 
   if (yourCardValue > hisCardValue){
     document.getElementById("hisDeck").innerHTML = hisDeck.length
@@ -197,10 +297,5 @@ function attack(){
     return
   }
 
-  }
 
-  else{
-    document.getElementById("yourCard").innerHTML = ""
-    document.getElementById("hisCard").innerHTML = ""
-  }
-}
+} // end function
